@@ -1,7 +1,7 @@
 import Products from '@/components/products/Products';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Empty } from 'antd'; // ⬅️ Antd dan Empty import qilingan
+import { Empty } from 'antd'; 
 
 const Wishlist = () => {
   const wishlist = useSelector((state) => state.wishlist.value);

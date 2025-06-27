@@ -15,7 +15,6 @@ const Contact = () => {
       </p>
 
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10">
-        {/* LEFT - Contact Info */}
         <div className="space-y-10">
           <div className="flex items-start gap-4">
             <FaMapMarkerAlt className="text-xl mt-1 text-black" />
@@ -44,8 +43,8 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* RIGHT - Form */}
-        <form className="space-y-6">
+        <form  onSubmit={(e) => {
+    e.preventDefault(); }} className="space-y-6">
           <div>
             <label className="block text-sm font-medium mb-1">Your name</label>
             <input

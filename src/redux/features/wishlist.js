@@ -11,10 +11,8 @@ export const wishlistSlice = createSlice({
     toggleWishlist:(state, action)=>{
       const index = state.value.findIndex(item => item.id === action.payload.id)
       if(index < 0){
-        // add
         state.value.push(action.payload)
       }else{
-        // remove
         state.value = state.value.filter((item) => item.id !== action.payload.id)
       }
       localStorage.setItem("wishlist", JSON.stringify(state.value))

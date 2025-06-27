@@ -93,14 +93,6 @@ const Carousel = () => {
           </div>
         </div>
       </div>
-      {/* <div className="flex flex-col items-center mb-[22px] mt-16 text-center px-4">
-        <h3 className="text-base sm:text-lg md:text-xl text-[#616161] font-semibold">
-          Share your setup with
-        </h3>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] mb-4 text-[#3A3A3A] font-bold">
-          #FuniroFurniture
-        </h2>
-      </div> */}
   </div>
 
 

@@ -7,7 +7,7 @@ import bedroom from "@/assets/bedroom.svg"
 const Living = () => {
   return (
     <div className='mt-[56px]  mb-[62px]'>
-        <div className=' text-center ' >
+        <div className=' text-center' >
 
         <h3 className='text-[32px] font-bold'>Browse The Range</h3>
         <br />

@@ -10,7 +10,6 @@ const ProductItem = (product) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const wishlist = useSelector((state) => state.wishlist.value);
-  // const[add,setAdd] = useState(false)
   return (
     <div key={id} className="relative group bg-white transition p-4 rounded-md">
       <div className="relative overflow-hidden rounded-md">
@@ -20,13 +19,6 @@ const ProductItem = (product) => {
           alt={title}
           className="cursor-pointer rounded-md w-full h-48 object-cover group-hover:scale-105 duration-300"
         />
-{/* 
-        <button
-          onClick={() => navigate(`/product/${id}`)}
-          className="absolute bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-black/60 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition duration-300"
-        >
-          <EyeOutlined />
-        </button> */}
       </div>
 
       <button

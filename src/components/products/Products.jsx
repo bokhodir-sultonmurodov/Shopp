@@ -16,7 +16,7 @@ const Skeleton = ({ count }) => {
 
 const Products = ({ data, loading, count }) => {
   return (
-    <div className='mt-10 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 lg:gap-8 gap-3 container mx-auto'>
+    <div className="mt-10 grid grid-cols-1 min-[600px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-8 container mx-auto">
       {
         loading ? <Skeleton count={count} /> :
           data?.map((product) => (

@@ -35,7 +35,7 @@ const Carousel = () => {
 
   return (
     <>
-
+  <div className='bg-[#FCF8F3] w-full'>
 
       <div className="flex flex-col lg:flex-row items-center bg-[#FCF8F3] px-6 lg:px-20 py-12 gap-12 container mx-auto">
       <div className="w-full lg:w-1/2 text-center lg:text-left px-4">
@@ -101,9 +101,11 @@ const Carousel = () => {
           #FuniroFurniture
         </h2>
       </div> */}
+  </div>
+
 
     </>
   );
 };
 
-export default Carousel;
+export default React.memo(Carousel);

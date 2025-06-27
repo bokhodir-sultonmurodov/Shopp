@@ -3,7 +3,7 @@ import Features from "@/components/features/Features";
 import Heroo from "@/components/hero/Heroo";
 import Products from "@/components/products/Products";
 import { Pagination } from "antd";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Shop = () => {
@@ -14,7 +14,10 @@ const Shop = () => {
   // const [page, setPage] = useState(1);
   const page = params.get("page") || 1
   const pageSize = params.get("pageSize") || 16
-  
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, [page, pageSize]);
+
 
   const { data, isLoading } = getProduct({ limit: pageSize, skip: pageSize * (page - 1) });
 
@@ -47,4 +50,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default React.memo(Shop);

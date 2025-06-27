@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { HeartOutlined, HeartFilled, EyeOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleWishlist } from "@/redux/features/wishlist";
@@ -10,22 +10,23 @@ const ProductItem = (product) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const wishlist = useSelector((state) => state.wishlist.value);
-
+  // const[add,setAdd] = useState(false)
   return (
-    <div key={id} className="relative group bg-white transition p-4 rounded-md shadow hover:shadow-md">
+    <div key={id} className="relative group bg-white transition p-4 rounded-md">
       <div className="relative overflow-hidden rounded-md">
         <img
+         onClick={() => navigate(`/product/${id}`)}
           src={thumbnail}
           alt={title}
-          className="rounded-md w-full h-48 object-cover group-hover:scale-105 duration-300"
+          className="cursor-pointer rounded-md w-full h-48 object-cover group-hover:scale-105 duration-300"
         />
-
+{/* 
         <button
           onClick={() => navigate(`/product/${id}`)}
           className="absolute bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-black/60 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition duration-300"
         >
           <EyeOutlined />
-        </button>
+        </button> */}
       </div>
 
       <button
@@ -49,19 +50,15 @@ const ProductItem = (product) => {
       </span>
 
       <div className="mt-4 relative flex justify-between items-center">
+        
         <button
           onClick={() => dispatch(addToCart(product))}
-          className="w-[75%] py-2 bg-white text-[#B88E2F] cursor-pointer font-medium rounded hover:bg-[#B88E2F] hover:text-white transition duration-200"
+          className="w-[100%] py-2 bg-white text-[#B88E2F] cursor-pointer font-medium rounded hover:bg-[#B88E2F] hover:text-white transition duration-200"
         >
           Add to Cart
         </button>
 
-        {/* <button
-          onClick={() => navigate(`/product/${id}`)}
-          className="text-sm text-[#B88E2F] hover:underline flex items-center gap-1"
-        >
-          <EyeOutlined />
-        </button> */}
+    
       </div>
     </div>
 
@@ -69,4 +66,4 @@ const ProductItem = (product) => {
   );
 };
 
-export default ProductItem;
+export default React.memo(ProductItem);

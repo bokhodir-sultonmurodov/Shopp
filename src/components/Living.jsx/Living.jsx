@@ -32,4 +32,4 @@ const Living = () => {
   )
 }
 
-export default Living
+export default React.memo(Living)

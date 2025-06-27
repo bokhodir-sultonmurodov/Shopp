@@ -18,10 +18,15 @@ export const wishlistSlice = createSlice({
         state.value = state.value.filter((item) => item.id !== action.payload.id)
       }
       localStorage.setItem("wishlist", JSON.stringify(state.value))
-    }
+    },
+    removeWishlist: (state, action) => {
+  state.value = state.value.filter(item => item.id !== action.payload.id);
+  localStorage.setItem("wishlist", JSON.stringify(state.value));
+}
+
   },
 })
 
-export const { toggleWishlist } = wishlistSlice.actions
+export const { toggleWishlist,removeWishlist } = wishlistSlice.actions
 
 export default wishlistSlice.reducer

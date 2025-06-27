@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useProduct } from "@/api/hooks/useProduct";
 import { useDispatch } from "react-redux";
@@ -9,7 +9,10 @@ const Productdetail = () => {
     const { getProductById } = useProduct();
     const { data: product, isLoading } = getProductById(id);
     const dispatch = useDispatch();
-
+     useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+    
     if (isLoading) return <div className="text-center py-10">Loading...</div>;
 
     const {
@@ -27,7 +30,7 @@ const Productdetail = () => {
 
     return (
         <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="flex gap-4">я
+            <div className="flex gap-4">
                 <div className="flex flex-col gap-4">
                     {images?.map((img, index) => (
                         <img key={index} src={img} alt={title} className="w-20 h-20 object-cover border rounded" />
@@ -106,4 +109,4 @@ const Productdetail = () => {
     );
 };
 
-export default Productdetail;
+export default React.memo(Productdetail);

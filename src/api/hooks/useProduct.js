@@ -12,8 +12,15 @@ export const useProduct = () => {
     useQuery({
       queryKey: ["product", id],
       queryFn: () => api.get(`/products/${id}`).then(res => res.data),
-     
+
+    });
+  const getSearchPdroduct = (params) =>
+    useQuery({
+      queryKey: ["product", params],
+      queryFn: () => api.get("/products/search", { params }),
+      enabled: !!params.q
     });
 
-  return { getProduct, getProductById };
+
+  return { getProduct, getProductById,getSearchPdroduct };
 };
